@@ -7,6 +7,13 @@
 hash_table = list([i for i in range(10)])
 
 
+def save_data_of_data(data):
+    # data[0]문자를 ASCII code로 변환해서 key 변수에 저장
+    key = ord(data[0])
+    hash_addr = hash_func(key)
+    hash_table[hash_addr] = data
+
+
 def save_data(data, value):
     # data[0]문자를 ASCII code로 변환해서 key 변수에 저장
     key = ord(data[0])
@@ -28,12 +35,15 @@ def hash_func(key):
 def main():
     hash_table
 
-    save_data('HYUNGI', '01063204954')
-    save_data('PERSON_A', '01011111111')
-    save_data('PERSON_B', '01022222222')
-    save_data('PERSON_C', '01033333333')
-    print("Phone number : "+(get_data('PERSON_B')))
-    print("Hash Table(Size) : "+str(len(hash_table)))
+    save_data_of_data('MIKE LEE')
+    print("result is "+get_data('MIKE LEE'))
+
+    # save_data('HYUNGI', '01063204954')
+    # save_data('PERSON_A', '01011111111')
+    # save_data('PERSON_B', '01022222222')
+    # save_data('PERSON_C', '01033333333')
+    # print("Phone number : "+(get_data('PERSON_B')))
+    # print("Hash Table(Size) : "+str(len(hash_table)))
 
 
 if __name__ == "__main__":
